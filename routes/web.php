@@ -28,7 +28,7 @@ Route::get("/info", function () {
 })->name('info.index');
 
 
-Route::resource('chirps', ChirperController::class)
+Route::resource('chirpers', ChirperController::class)
     ->only(['index', 'store'])
     ->middleware(['auth', 'verified']
 );
