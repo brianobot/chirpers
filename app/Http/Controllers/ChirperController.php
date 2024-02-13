@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Chirper;
 use App\Repositories\ChirperRepository;
+use Doctrine\DBAL\Driver\Mysqli\Initializer\Charset;
 use Illuminate\Http\Request;
 
 class ChirperController extends Controller
@@ -20,7 +21,7 @@ class ChirperController extends Controller
     public function index()
     {
         $chirpers = $this->chirperRepository->getAll();
-        dd($chirpers);
+        info($chirpers);
         return response("list all the chirps here");
     }
 
