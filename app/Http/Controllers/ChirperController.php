@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Chirper;
 use App\Repositories\ChirperRepository;
+use Doctrine\DBAL\Driver\Mysqli\Initializer\Charset;
 use Illuminate\Http\Request;
 
 class ChirperController extends Controller
