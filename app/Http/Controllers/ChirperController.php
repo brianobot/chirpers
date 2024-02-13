@@ -20,7 +20,7 @@ class ChirperController extends Controller
     public function index()
     {
         $chirpers = $this->chirperRepository->getAll();
-        dd($chirpers);
+        info($chirpers);
         return response("list all the chirps here");
     }
 
