@@ -3,16 +3,25 @@
 namespace App\Http\Controllers;
 
 use App\Models\Chirper;
+use App\Repositories\ChirperRepository;
 use Illuminate\Http\Request;
 
 class ChirperController extends Controller
 {
+    private ChirperRepository $chirperRepository;
+
+    public function __construct(ChirperRepository $chirperRepository)
+    {
+        $this->chirperRepository = $chirperRepository;   
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $chirpers = $this->chirperRepository->getAll();
+        dd($chirpers);
+        return response("list all the chirps here");
     }
 
     /**
